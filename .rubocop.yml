@@ -1,6 +1,8 @@
 AllCops:
   Include:
     - 'lib/**/*'
+    - 'Gemfile'
+    - 'Rakefile'
   Exclude:
     # It is too heavy with math and formulae
     - 'lib/geo/coord/globes.rb'
