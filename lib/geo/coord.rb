@@ -150,7 +150,7 @@ module Geo
       # @private
       DEG_PATTERN = '[ °d]'.freeze # :nodoc:
       # @private
-      MIN_PATTERN = "['′m]".freeze # :nodoc:
+      MIN_PATTERN = "['′’m]".freeze # :nodoc:
       # @private
       SEC_PATTERN = '["″s]'.freeze # :nodoc:
 
