@@ -52,6 +52,10 @@ describe Geo::Coord do
       c.lat.should == 0
       c.lng.should be_close(36.231389, 0.01)
     end
+
+    it 'is rasing ArgumentError when arguments are missing' do
+      lambda{Geo::Coord.new()}.should raise_error(ArgumentError)
+    end
   end
 
   context :from_h do
