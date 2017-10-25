@@ -158,22 +158,22 @@ module Geo
       LL_PATTERN = /^(#{FLOAT_PATTERN})\s*[,; ]\s*(#{FLOAT_PATTERN})$/ # :nodoc:
 
       # @private
-      DMS_LATD_P = "(?<latd>#{INT_PATTERN})#{DEG_PATTERN}" # :nodoc:
+      DMS_LATD_P = "(?<latd>#{INT_PATTERN})#{DEG_PATTERN}".freeze # :nodoc:
       # @private
-      DMS_LATM_P = "(?<latm>#{UINT_PATTERN})#{MIN_PATTERN}" # :nodoc:
+      DMS_LATM_P = "(?<latm>#{UINT_PATTERN})#{MIN_PATTERN}".freeze # :nodoc:
       # @private
-      DMS_LATS_P = "(?<lats>#{UFLOAT_PATTERN})#{SEC_PATTERN}" # :nodoc:
+      DMS_LATS_P = "(?<lats>#{UFLOAT_PATTERN})#{SEC_PATTERN}".freeze # :nodoc:
       # @private
-      DMS_LAT_P = "#{DMS_LATD_P}\\s*#{DMS_LATM_P}\\s*#{DMS_LATS_P}\\s*(?<lath>[NS])" # :nodoc:
+      DMS_LAT_P = "#{DMS_LATD_P}\\s*#{DMS_LATM_P}\\s*#{DMS_LATS_P}\\s*(?<lath>[NS])".freeze # :nodoc:
 
       # @private
-      DMS_LNGD_P = "(?<lngd>#{INT_PATTERN})#{DEG_PATTERN}" # :nodoc:
+      DMS_LNGD_P = "(?<lngd>#{INT_PATTERN})#{DEG_PATTERN}".freeze # :nodoc:
       # @private
-      DMS_LNGM_P = "(?<lngm>#{UINT_PATTERN})#{MIN_PATTERN}" # :nodoc:
+      DMS_LNGM_P = "(?<lngm>#{UINT_PATTERN})#{MIN_PATTERN}".freeze # :nodoc:
       # @private
-      DMS_LNGS_P = "(?<lngs>#{UFLOAT_PATTERN})#{SEC_PATTERN}" # :nodoc:
+      DMS_LNGS_P = "(?<lngs>#{UFLOAT_PATTERN})#{SEC_PATTERN}".freeze # :nodoc:
       # @private
-      DMS_LNG_P = "#{DMS_LNGD_P}\\s*#{DMS_LNGM_P}\\s*#{DMS_LNGS_P}\\s*(?<lngh>[EW])" # :nodoc:
+      DMS_LNG_P = "#{DMS_LNGD_P}\\s*#{DMS_LNGM_P}\\s*#{DMS_LNGS_P}\\s*(?<lngh>[EW])".freeze # :nodoc:
 
       # @private
       DMS_PATTERN = /^\s*#{DMS_LAT_P}\s*[,; ]\s*#{DMS_LNG_P}\s*$/x# :nodoc:
