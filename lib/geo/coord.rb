@@ -176,7 +176,7 @@ module Geo
       DMS_LNG_P = "#{DMS_LNGD_P}\\s*#{DMS_LNGM_P}\\s*#{DMS_LNGS_P}\\s*(?<lngh>[EW])".freeze # :nodoc:
 
       # @private
-      DMS_PATTERN = /^\s*#{DMS_LAT_P}\s*[,; ]\s*#{DMS_LNG_P}\s*$/x# :nodoc:
+      DMS_PATTERN = /^\s*#{DMS_LAT_P}\s*[,; ]\s*#{DMS_LNG_P}\s*$/x # :nodoc:
 
       # Parses Coord from string containing float latitude and longitude.
       # Understands several types of separators/spaces between values.
