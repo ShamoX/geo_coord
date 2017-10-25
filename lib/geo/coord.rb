@@ -158,18 +158,25 @@ module Geo
       LL_PATTERN = /^(#{FLOAT_PATTERN})\s*[,; ]\s*(#{FLOAT_PATTERN})$/ # :nodoc:
 
       # @private
-      DMS_PATTERN = # :nodoc:
-        /^\s*
-          (?<latd>#{INT_PATTERN})#{DEG_PATTERN}\s*
-          ((?<latm>#{UINT_PATTERN})#{MIN_PATTERN}\s*
-          ((?<lats>#{UFLOAT_PATTERN})#{SEC_PATTERN}\s*)?)?
-          (?<lath>[NS])?
-          \s*[,; ]\s*
-          (?<lngd>#{INT_PATTERN})#{DEG_PATTERN}\s*
-          ((?<lngm>#{UINT_PATTERN})#{MIN_PATTERN}\s*
-          ((?<lngs>#{UFLOAT_PATTERN})#{SEC_PATTERN}\s*)?)?
-          (?<lngh>[EW])?
-          \s*$/x
+      DMS_LATD_P = "(?<latd>#{INT_PATTERN})#{DEG_PATTERN}" # :nodoc:
+      # @private
+      DMS_LATM_P = "(?<latm>#{UINT_PATTERN})#{MIN_PATTERN}" # :nodoc:
+      # @private
+      DMS_LATS_P = "(?<lats>#{UFLOAT_PATTERN})#{SEC_PATTERN}" # :nodoc:
+      # @private
+      DMS_LAT_P = "#{DMS_LATD_P}\\s*#{DMS_LATM_P}\\s*#{DMS_LATS_P}\\s*(?<lath>[NS])" # :nodoc:
+
+      # @private
+      DMS_LNGD_P = "(?<lngd>#{INT_PATTERN})#{DEG_PATTERN}" # :nodoc:
+      # @private
+      DMS_LNGM_P = "(?<lngm>#{UINT_PATTERN})#{MIN_PATTERN}" # :nodoc:
+      # @private
+      DMS_LNGS_P = "(?<lngs>#{UFLOAT_PATTERN})#{SEC_PATTERN}" # :nodoc:
+      # @private
+      DMS_LNG_P = "#{DMS_LNGD_P}\\s*#{DMS_LNGM_P}\\s*#{DMS_LNGS_P}\\s*(?<lngh>[EW])" # :nodoc:
+
+      # @private
+      DMS_PATTERN = /^\s*#{DMS_LAT_P}\s*[,; ]\s*#{DMS_LNG_P}\s*$/x# :nodoc:
 
       # Parses Coord from string containing float latitude and longitude.
       # Understands several types of separators/spaces between values.
