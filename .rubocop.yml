@@ -45,3 +45,6 @@ Metrics/CyclomaticComplexity:
 
 Metrics/MethodLength:
   Max: 14
+
+Gemspec/OrderedDependencies:
+  Enabled: false
